@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails events_app: test" uuid="9b95ec59-26b5-48a2-a06e-4c1e778661a8">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>amb</user-name>
+    </data-source>
+    <data-source name="Rails events_app: development" uuid="1607f5d4-1de8-429f-b66c-4eb281b22da6">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails events_app: production" uuid="f38a0912-44e9-4166-9270-2a4a24750a32">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>amb</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfefdffcdfefdfe4dffedff9dff5dfebdffadffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
