@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
   has_many :user_provider, :dependent => :destroy
+  has_many :events, dependent: :destroy
 
   protected
   def confirmation_required?
