@@ -1,0 +1,15 @@
+<div>
+    <section class="user-info">
+        <h1>
+            <%= @user.email %>
+        </h1>
+    </section>
+</div>
+<div>
+    <% if @user.events.any? %>
+      <ol class="events" %>
+        <%= render @events %>
+      </ol>
+      <%= will_paginate @events %>
+    <% end %>
+</div>

@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'will_paginate', '~> 3.1.0'
+gem 'faker', '1.1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,13 @@
+
+<li>
+  <span><strong><%= event.title %></strong></span>
+  <span><%= event.description %></span>
+  <span><%= event.user.email %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(event.created_at) %> ago.
+  </span>
+  <span><%= link_to 'Show', event %></span>
+  <span><%= link_to 'Edit', edit_event_path(event) %></span>
+  <span><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+</li>
+

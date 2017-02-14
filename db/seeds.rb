@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = User.order(:created_at).take(2)
+50.times do
+  content = Faker::Lorem.sentence(1)
+  second_content = Faker::Lorem.sentence(5)
+  users.each { |user| user.events.create!(title: content, description: second_content) }
+end
