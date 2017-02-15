@@ -7,7 +7,9 @@
     Posted <%= time_ago_in_words(event.created_at) %> ago.
   </span>
   <span><%= link_to 'Show', event %></span>
-  <span><%= link_to 'Edit', edit_event_path(event) %></span>
-  <span><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+  <% if current_user == event.user %>
+    <span><%= link_to 'Edit', edit_event_path(event) %></span>
+    <span><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+  <% end %>
 </li>
 
