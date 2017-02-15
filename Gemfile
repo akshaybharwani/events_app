@@ -35,6 +35,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'will_paginate', '~> 3.1.0'
 gem 'faker', '1.1.2'
+gem 'carrierwave',             '0.11.2'
+gem 'mini_magick',             '4.5.1'
+gem 'fog',                     '1.38.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

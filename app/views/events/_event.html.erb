@@ -2,6 +2,7 @@
 <li>
   <span><strong><%= event.title %></strong></span>
   <span><%= event.description %></span>
+  <span><%= image_tag event.picture.url if event.picture? %></span>
   <span><%= event.user.email %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(event.created_at) %> ago.
