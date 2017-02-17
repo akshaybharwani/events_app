@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :user_provider, :dependent => :destroy
   has_many :events, dependent: :destroy
+  acts_as_voter
 
   protected
   def confirmation_required?

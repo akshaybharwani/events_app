@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   root 'events#index'
 
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :registrations => 'users/registrations'}
-  resources :events
+  #resources :events
+  resources :events do
+    member do
+      put "attend",   to: "events#attend"
+      put "unattend", to: "events#unattend"
+    end
+  end
   get '/users/:id', :to => 'users#show', :as => :user
+
 end

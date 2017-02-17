@@ -7,6 +7,18 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(event.created_at) %> ago.
   </span>
+  <% if current_user.voted_up_on? event %>
+    <%= link_to unattend_event_path(event), method: :put do %>
+        UnAttend
+        <%= event.get_upvotes.size %>
+    <% end %>
+  <% else %>
+    <%= link_to attend_event_path(event), method: :put do %>
+        Attend
+        <%= event.get_upvotes.size %>
+    <% end %>
+  <% end %>
+
   <span><%= link_to 'Show', event %></span>
   <% if current_user == event.user %>
     <span><%= link_to 'Edit', edit_event_path(event) %></span>

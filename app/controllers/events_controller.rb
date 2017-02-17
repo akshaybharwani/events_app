@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   # Only Signed In users can CRUD posts.
-  before_action :authenticate_user!, only: [:new, :create, :destroy] # We can add an exception if we want.
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :attend] # We can add an exception if we want.
   # GET /events
   # GET /events.json
   def index
@@ -50,6 +50,18 @@ class EventsController < ApplicationController
     @event.destroy
     flash[:notice] = 'Event deleted'
     redirect_to request.referrer || root_url
+  end
+
+  def attend
+    @event = Event.find(params[:id])
+    @event.upvote_by current_user
+    redirect_to :back
+  end
+
+  def unattend
+    @event = Event.find(params[:id])
+    @event.downvote_by current_user
+    redirect_to :back
   end
 
   private
