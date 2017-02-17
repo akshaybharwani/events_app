@@ -6,6 +6,9 @@ class Event < ApplicationRecord
   validates :title, presence: true#, length: { maximum: 30 }
   validates :description, presence: true, length: { maximum: 100 }
   validate  :picture_size
+  has_many :attendance_relations, foreign_key: 'attended_event_id_id',
+                                  dependent: :destroy
+  has_many :attendees,            through: :attendance_relations
 
   private
 

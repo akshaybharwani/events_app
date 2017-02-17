@@ -11,3 +11,9 @@ users = User.order(:created_at).take(2)
   second_content = Faker::Lorem.sentence(5)
   users.each { |user| user.events.create!(title: content, description: second_content) }
 end
+
+# Attending events
+events = Event.all
+user  = User.first
+attended_events = events[1..40]
+attended_events.each { |attended_event| user.attend_event(attended_event) }
