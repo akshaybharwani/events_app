@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217061408) do
+ActiveRecord::Schema.define(version: 20170217072034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20170217061408) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "user_id"
+    t.integer  "creator_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "picture"
-    t.index ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at", using: :btree
-    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+    t.index ["creator_id", "created_at"], name: "index_events_on_creator_id_and_created_at", using: :btree
+    t.index ["creator_id"], name: "index_events_on_creator_id", using: :btree
   end
 
   create_table "user_providers", force: :cascade do |t|
@@ -67,5 +67,5 @@ ActiveRecord::Schema.define(version: 20170217061408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "events", "users"
+  add_foreign_key "events", "users", column: "creator_id"
 end

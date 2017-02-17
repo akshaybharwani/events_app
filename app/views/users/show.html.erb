@@ -4,6 +4,9 @@
             <%= @user.email %>
         </h1>
     </section>
+  <section class="stats">
+    <%= render 'stats' %>
+  </section>
 </div>
 <div>
     <% if @user.events.any? %>
