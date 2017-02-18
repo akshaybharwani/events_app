@@ -1,10 +1,11 @@
 <h1>Events</h1>
 
 <div>
-      <ol class="events" %>
-        <%= render @events %>
-      </ol>
-      <%= will_paginate @events %>
+  <%= will_paginate @events %>
+  <ol class="events" %>
+    <%= render @events %>
+  </ol>
+  <%= will_paginate @events %>
 </div>
 
 <br>

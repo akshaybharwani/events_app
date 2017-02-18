@@ -1,16 +1,19 @@
 
 <li>
-  <span><strong><%= event.title %></strong></span>
+  <span><h4><%= event.title %></h4></span><br/>
   <span><%= event.description %></span>
   <span><%= image_tag event.picture.url if event.picture? %></span>
   <span><%= event.creator.email %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(event.created_at) %> ago.
   </span>
+  <br/>
+  <span id="attendee_count"><%= event.attendees.count %></span><span> Attendees</span></span>
+  <br/>
   <span><%= link_to 'Show', event %></span>
   <% if current_user == event.creator %>
-    <span><%= link_to 'Edit', edit_event_path(event) %></span>
-    <span><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      <span><%= link_to 'Edit', edit_event_path(event) %></span>
+      <span><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
   <% end %>
 </li>
 

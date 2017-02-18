@@ -1,0 +1,2 @@
+$("#attend_event_form").html("<%= escape_javascript(render('events/unattend')) %>");
+$("#attendee_count").html("<%= @event.attendees.count %>");

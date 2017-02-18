@@ -1,7 +1,9 @@
 <div id="attend_event_form">
-  <% if current_user.attending?(@event) %>
-      <%= render 'events/unattend' %>
-  <% else %>
-      <%= render 'events/attend' %>
+  <% if user_signed_in? %>
+      <% if current_user.attending?(@event)%>
+          <%= render 'events/unattend' %>
+      <% else %>
+          <%= render 'events/attend' %>
+      <% end %>
   <% end %>
 </div>
