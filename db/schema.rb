@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217072034) do
+ActiveRecord::Schema.define(version: 20170222191914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20170217072034) do
     t.string   "title"
     t.text     "description"
     t.integer  "creator_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "picture"
+    t.integer  "attendee_count", default: 0
     t.index ["creator_id", "created_at"], name: "index_events_on_creator_id_and_created_at", using: :btree
     t.index ["creator_id"], name: "index_events_on_creator_id", using: :btree
   end
