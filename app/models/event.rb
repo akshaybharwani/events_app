@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   has_many :attendance_relations, foreign_key: 'attended_event_id',
            dependent: :destroy
   has_many :attendees,            through: :attendance_relations
-
+  has_many :event_categories
   private
 
   # Validates the size of an uploaded picture.
