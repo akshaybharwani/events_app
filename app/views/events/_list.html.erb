@@ -1,0 +1,18 @@
+<div id="filterrific_results">
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Event Category</th>
+      <th>Start Date</th>
+    </tr>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to(event.title, event_path(event)) %></td>
+        <td><%= event.event_category.name %></td>
+        <td><%= event.start_date %></td>
+      </tr>
+        <%= will_paginate @events %>
+    <% end %>
+  </table>
+</div>

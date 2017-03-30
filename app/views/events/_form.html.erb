@@ -23,12 +23,12 @@
 
     <div class="field">
       <%= f.label :start_date %>
-      <%= f.date_field :start_date %>
+      <%= f.date_select :start_date %>
     </div>
 
     <div class="field">
       <%= f.label 'Category' %><br>
-      <%= f.collection_select :event_category_id, EventCategory.all, :id, :name %>
+      <%= f.collection_select :event_category_id, EventCategory.all, :id, :name, include_blank: true %>
     </div>
 
     <span class="picture">

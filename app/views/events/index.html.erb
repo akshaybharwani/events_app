@@ -1,13 +1,14 @@
 <h1>Events</h1>
+<form>
+  <div class="row">
+    <div class="medium-6 "
+  </div>
+</form>
 
-<div>
-  <%= will_paginate @events %>
-  <ol class="events" %>
-    <%= render @events %>
-  </ol>
-  <%= will_paginate @events %>
-</div>
+<%= render(
+        partial: 'events/list'
+    ) %>
 
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<script>
+    $('.js-datepicker').datepicker();
+</script>

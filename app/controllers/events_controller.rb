@@ -5,7 +5,20 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.paginate(page: params[:page])
+    # @events = Event.all.paginate(page: params[:page])
+    @filterrific = initialize_filterrific(
+        Event,
+        params[:filterrific],
+        :select_options => {
+            with_event_category_id: EventCategory.options_for_select
+        }
+    ) or return
+    @events = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /events/1
@@ -60,6 +73,6 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:title, :description, :picture)
+    params.require(:event).permit(:title, :description, :picture, :start_date, :event_category_id)
   end
 end
