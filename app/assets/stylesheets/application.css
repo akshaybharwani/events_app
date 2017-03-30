@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+# SCSS
+*= require devise_foundation_views_scss
  */

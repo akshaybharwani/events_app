@@ -1,3 +1,3 @@
 class EventCategory < ApplicationRecord
-  belongs_to :event, optional: true
+  has_many :events, optional: true
 end
