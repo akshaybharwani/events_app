@@ -41,6 +41,7 @@ gem 'fog',                     '1.38.0'
 gem 'foundation-rails'
 gem 'devise-foundation-views'
 gem 'filterrific'
+gem 'foundation-datepicker-rails'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

@@ -15,6 +15,7 @@
  *= require foundation_and_overrides
 # SCSS
 *= require devise_foundation_views_scss
+ *= require foundation-datepicker
  */
 
 @import 'components/filterrific_filter';
@@ -72,6 +73,8 @@ li.is-submenu-item:nth-child(n) {
 .pagination-style a:visited {
   color:inherit
 }
+
+// Events Index
 
 // Log In Form
 // Overloaded Foundation

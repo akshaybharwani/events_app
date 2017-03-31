@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require filterrific/filterrific-jquery
+//= require foundation-datepicker
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

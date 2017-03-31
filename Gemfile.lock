@@ -210,6 +210,7 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    foundation-datepicker-rails (0.0.2)
     foundation-rails (6.3.1.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -369,6 +370,7 @@ DEPENDENCIES
   faker (= 1.1.2)
   filterrific
   fog (= 1.38.0)
+  foundation-datepicker-rails
   foundation-rails
   jbuilder (~> 2.5)
   jquery-rails

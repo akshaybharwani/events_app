@@ -42,11 +42,14 @@
     <hr>
     <div class="row">
       <div class="medium-4 large-4 columns">
-        <span class="label success">Created by: <%= link_to event.creator.email, user_path(event.creator) %></span>
-        <% if current_user == event.creator %>
-            <span><%= link_to 'Edit', edit_event_path(event) %></span>
-            <span><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-        <% end %>
+        <div>
+          <span class="label success">Created by: <%= link_to event.creator.email, user_path(event.creator) %></span>
+          <% if current_user == event.creator %>
+              <span><%= link_to 'Edit', edit_event_path(event) %></span>
+              <span><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <% end %>
+        </div>
+
       </div>
     </div>
 

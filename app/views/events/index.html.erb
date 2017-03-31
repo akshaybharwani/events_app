@@ -21,7 +21,7 @@
         </div>
         <div class="medium-4 columns">
           <label>Start Date</label>
-          <%= f.text_field(:with_start_date, class: 'datepicker filterrific-periodically-observed form-control') %>
+          <%= f.text_field(:with_start_date, class: ' filterrific-periodically-observed form-control', id: 'datepicker') %>
         </div>
         <div>
           <%= link_to(
@@ -41,3 +41,17 @@
 <%= render(
         partial: 'events/list'
     ) %>
+
+<script>
+    $(function(){
+        $('#datepicker').fdatepicker({
+            initialDate: '02-12-1989',
+            format: 'mm-dd-yyyy',
+            disableDblClickSelection: true,
+            leftArrow:'<<',
+            rightArrow:'>>',
+            closeIcon:'X',
+            closeButton: true
+        });
+    });
+</script>
