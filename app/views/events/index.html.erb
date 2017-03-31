@@ -1,14 +1,43 @@
-<h1>Events</h1>
-<form>
-  <div class="row">
-    <div class="medium-6 "
-  </div>
-</form>
+<%= form_for_filterrific @filterrific do |f| %>
+    <form>
+      <div class="row">
+        <h3 class="text-center">Events</h3>
+        <div class="medium-4 columns">
+          <label>Search Events</label>
+          <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+          <%= f.text_field(
+                  :search_query,
+                  class: 'filterrific-periodically-observed form-control'
+              ) %>
+        </div>
+        <div class="medium-4 columns">
+          <label>Event Category</label>
+          <%= f.select(
+                  :with_event_category_id,
+                  @filterrific.select_options[:with_event_category_id],
+                  { include_blank: '- Any -' },
+                  class: 'form-control'
+              ) %>
+        </div>
+        <div class="medium-4 columns">
+          <label>Start Date</label>
+          <%= f.text_field(:with_start_date, class: 'datepicker filterrific-periodically-observed form-control') %>
+        </div>
+        <div>
+          <%= link_to(
+                  'Reset filters',
+                  reset_filterrific_url,
+              ) %>
+          <%# add an automated spinner to your form when the list is refreshed %>
+          <%= render_filterrific_spinner %>
+        </div>
+
+      </div>
+
+    </form>
+
+<% end %>
 
 <%= render(
         partial: 'events/list'
     ) %>
-
-<script>
-    $('.js-datepicker').datepicker();
-</script>

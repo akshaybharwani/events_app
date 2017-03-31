@@ -1,18 +1,23 @@
-<div>
+<div class="medium-10 medium-centered large-10 large-centered columns">
+  <div class="text-center">
     <section class="user-info">
-        <h1>
+        <h4>
             <%= @user.email %>
-        </h1>
+        </h4>
     </section>
-  <section class="stats">
-    <%= render 'stats' %>
-  </section>
-</div>
-<div>
-    <% if @user.events.any? %>
-      <ol class="events" %>
-        <%= render @events %>
-      </ol>
-      <%= will_paginate @events %>
-    <% end %>
+    <section class="stats">
+      <%= render 'stats' %>
+    </section>
+  </div>
+  <div>
+      <% if @user.created_events.any? %>
+        <ul class="no-bullets events" style="list-style-type: none" %>
+          <div class="pagination-style center-block">
+            <%= will_paginate @events %>
+          </div>
+          <%= render @events %>
+        </ul>
+
+      <% end %>
+  </div>
 </div>

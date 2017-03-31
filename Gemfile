@@ -40,17 +40,7 @@ gem 'mini_magick',             '4.5.1'
 gem 'fog',                     '1.38.0'
 gem 'foundation-rails'
 gem 'devise-foundation-views'
-
-# From Filterrific Demo App:
-gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-sass'
-gem 'chardinjs-rails'
-gem 'filterrific' #, path: '../filterrific'
-gem 'haml-rails'
-gem 'random_data'
-gem 'thin'
-gem 'will_paginate-bootstrap'
-# Use Capistrano for deployment
+gem 'filterrific'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

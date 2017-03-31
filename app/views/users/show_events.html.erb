@@ -1,20 +1,23 @@
-<div class="row">
-  <aside class="">
-    <section class="user_info">
-      <h1><%= @user.email %></h1>
-      <span><%= link_to 'view my profile', @user %></span>
-      <section class="stats">
-        <%= render 'stats' %>
-      </section>
+<div class="medium-10 medium-centered large-10 large-centered columns">
+  <div class="text-center">
+    <section class="user-info">
+      <h4>
+        <%= @user.email %>
+      </h4>
     </section>
-  </aside>
-  <div class="">
+    <section class="stats">
+      <%= render 'stats' %>
+    </section>
+  </div>
+  <div>
     <% if @events.any? %>
-      <%= will_paginate @events %>
-      <ul class="users events">
-        <%= render @events %>
-      </ul>
-      <%= will_paginate @events %>
+        <ul class="no-bullets events" style="list-style-type: none" %>
+          <div class="pagination-style center-block">
+            <%= will_paginate @events %>
+          </div>
+          <%= render @events %>
+        </ul>
+
     <% end %>
   </div>
 </div>

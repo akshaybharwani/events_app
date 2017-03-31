@@ -17,11 +17,164 @@
 *= require devise_foundation_views_scss
  */
 
-/* Pull in bootstrap */
-@import 'bootstrap';
-
-/* Import any app style files below this line */
-@import 'bootstrap-datepicker3.css';
-
 @import 'components/filterrific_filter';
 @import 'components/chardinjs_overrides.css';
+
+body, html {
+  padding: 0px;
+  margin: 0px;
+}
+
+// Sticky Top Bar
+// Overloaded Foundation
+
+#error_explanation {
+  width: inherit;
+}
+
+.title-bar {
+  background-color: rgb(37, 40, 49);
+
+  li {
+
+  }
+
+}
+li.is-submenu-item:nth-child(n) {
+  background-color: rgb(37, 40, 49);
+}
+.title-bar-right {
+  a {
+    color: white;
+
+  }
+}
+
+#new-event-button {
+  background-color: #2199e8;
+}
+
+.menu-text {
+  font-size: 20px;
+  color: white !important;
+}
+
+.menu-text:hover {
+  background-color: transparent;
+}
+
+// Will Paginate div
+
+.pagination-style a {
+  display: inline-block;
+}
+
+.pagination-style a:visited {
+  color:inherit
+}
+
+// Log In Form
+// Overloaded Foundation
+
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem !important;
+  border-radius: 3px;
+
+  .hover-button {
+    font-size: 1rem;
+  }
+  .hover-button:hover {
+    background-color: rgb(37, 40, 49);
+
+  }
+
+  .shared-link a {
+    font-size: 1rem;
+    color: #2199e8;
+  }
+
+  .shared-link a:hover {
+    color: rgb(37, 40, 49);
+    background-color: transparent;
+  }
+}
+
+.shared-login-button a {
+  color: white;
+}
+
+// Event show - From "Zurb U - Event Listing' styles
+article {
+  padding: 0px;
+}
+
+.event {
+  padding: 1rem 1rem 1rem 0;
+  display: table; }
+
+.event-date {
+  width: 6rem;
+  margin: 0 auto 1rem;
+  width: auto;
+  border: 1px solid #000000;
+}
+.event-date .event-month {
+  margin: 0;
+  background: #2199e8;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  color: white;
+  font-size: 1rem;}
+.event-date .event-day {
+  margin: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 2rem; }
+
+.event-desc {
+  padding: 0 0 0 1rem;
+  text-align: left;
+  display: table-cell;
+  vertical-align: top; }
+.event-desc .event-desc-header {
+  margin: 0 0 0.5rem 0;
+  padding: 0; }
+.event-desc .event-desc-detail {
+  margin: 0 0 0.25rem;
+  padding: 0; }
+.event-desc .event-desc-time {
+  font-weight: bold; }
+
+/*
+.event-info-div {
+  padding-top: 10px;
+  border-top: solid black;
+  border-width: 0.5px;
+}
+*/
+
+.label.success {
+  a {
+    color: black;
+  }
+  a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+// User Stats
+
+.stats a:visited {
+  color: inherit;
+}
+
+.stats a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+p, a, h1, h2, h3, h4, h5, h6, label {
+  font-family: 'Open Sans', sans-serif;
+}

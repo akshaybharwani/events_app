@@ -1,44 +1,48 @@
-<%= form_for(event, html: { multipart: true }) do |f| %>
-    <% if event.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+    <%= form_for(event, html: { multipart: true }) do |f| %>
+        <form>
+          <div class="row column log-in-form">
+            <h4 class="text-center">Create a Event</h4>
 
-          <ul>
-            <% event.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+            <% if event.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+                  <ul>
+                    <% event.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
             <% end %>
-          </ul>
-        </div>
+
+            <label>Title
+              <%= f.text_field :title %>
+            </label>
+
+            <label>Description
+              <%= f.text_area :description %>
+            </label>
+
+            <label>Start Date
+              <%= f.date_select :start_date %>
+            </label>
+
+            <label>Category for the Event
+              <%= f.collection_select :event_category_id, EventCategory.all, :id, :name, include_blank: true %>
+            </label>
+
+            <label>Upload an Image for the Event
+                <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+            </label>
+
+            <p><%= f.submit "Submit Event", class: "button expanded hover-button" %></p>
+          </div>
+        </form>
     <% end %>
-
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-    </div>
-
-    <div class="field">
-      <%= f.label :start_date %>
-      <%= f.date_select :start_date %>
-    </div>
-
-    <div class="field">
-      <%= f.label 'Category' %><br>
-      <%= f.collection_select :event_category_id, EventCategory.all, :id, :name, include_blank: true %>
-    </div>
-
-    <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+  </div>
+</div>
 
 <script type="text/javascript">
     $('#event_picture').bind('change', function() {

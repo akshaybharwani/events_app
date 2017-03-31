@@ -1,18 +1,35 @@
-<div id="filterrific_results">
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Event Category</th>
-      <th>Start Date</th>
-    </tr>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to(event.title, event_path(event)) %></td>
-        <td><%= event.event_category.name %></td>
-        <td><%= event.start_date %></td>
-      </tr>
-        <%= will_paginate @events %>
-    <% end %>
-  </table>
+<div class="row">
+  <div class="pagination-style center-block">
+    <%= will_paginate @events %>
+  </div>
 </div>
+<div id="filterrific_results">
+  <div class="row">
+    <table  class="unstriped hover stack">
+      <thead>
+      <tr>
+        <th>Attendees</th>
+        <th>Name</th>
+        <th>Event Category</th>
+        <th>Start Date</th>
+      </tr>
+      </thead>
+      <% @events.each do |event| %>
+          <tbody>
+            <tr>
+              <td><%= event.attendees.count %></td>
+              <td><%= link_to(event.title, event_path(event)) %></td>
+              <td><%= event.event_category.name if event.event_category %></td>
+              <td><%= event.start_date %></td>
+            </tr>
+
+          </tbody>
+
+      <% end %>
+    </table>
+
+  </div>
+
+</div>
+
+
