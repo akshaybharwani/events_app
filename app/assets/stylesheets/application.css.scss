@@ -19,11 +19,30 @@
  */
 
 @import 'components/filterrific_filter';
-@import 'components/chardinjs_overrides.css';
 
 body, html {
   padding: 0px;
   margin: 0px;
+}
+
+// Devise shared links
+
+i {
+  color: #1779ba;
+  border: 1px solid #1779ba;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+i:hover {
+  color: white;
+  background-color: #1779ba;
+}
+
+#social-links a:hover {
+  color: inherit;
+  background-color: transparent;
 }
 
 // Sticky Top Bar
@@ -166,6 +185,7 @@ article {
     text-decoration: underline;
   }
 }
+
 
 // User Stats
 
