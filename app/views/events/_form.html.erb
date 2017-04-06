@@ -53,13 +53,16 @@
     });
 
     $(function(){
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
         $('#datepicker-new-event').fdatepicker({
             format: 'dd-mm-yyyy',
             disableDblClickSelection: true,
             leftArrow:'<<',
             rightArrow:'>>',
-            closeIcon:'X',
-            closeButton: true
+            onRender: function (date) {
+                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+            }
         });
     });
 </script>

@@ -18,7 +18,13 @@
           <tbody>
             <tr>
               <td><%= event.attendees.count %></td>
-              <td><%= link_to(event.title, event_path(event)) %></td>
+              <td><%= link_to(event.title, event_path(event)) %>
+                <% if event.start_date? %>
+                    <% if event.start_date < Date.today %>
+                        <span class="label">PAST</span>
+                    <% end %>
+                <% end %>
+              </td>
               <td><%= event.event_category.name if event.event_category %></td>
               <td><%= event.start_date %></td>
             </tr>
