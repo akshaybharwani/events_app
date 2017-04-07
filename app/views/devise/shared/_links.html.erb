@@ -15,12 +15,12 @@
       <%- resource_class.omniauth_providers.each do |provider| %>
           <% if OmniAuth::Utils.camelize(provider) == 'Facebook' %>
               <%= link_to omniauth_authorize_path(resource_name, provider) do %>
-                  <i class="fa fa-facebook fa-2x"></i>
+                  <i class="fa fa-facebook fa-2x social-links-link"></i>
               <% end %>
           <% end %>
           <% if OmniAuth::Utils.camelize(provider) == 'GoogleOauth2' %>
               <%= link_to omniauth_authorize_path(resource_name, provider) do %>
-                  <i class="fa fa-google fa-2x"></i>
+                  <i class="fa fa-google fa-2x social-links-link"></i>
               <% end %>
           <% end %>
       <% end -%>

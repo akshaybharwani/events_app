@@ -16,6 +16,7 @@
 # SCSS
 *= require devise_foundation_views_scss
  *= require foundation-datepicker
+ *= require commontator/application
  */
 
 @import 'components/filterrific_filter';
@@ -27,7 +28,7 @@ body, html {
 
 // Devise shared links
 
-i {
+i.social-links-link {
   color: #1779ba;
   border: 1px solid #1779ba;
   padding: 5px;
@@ -35,7 +36,7 @@ i {
   border-radius: 5px;
 }
 
-i:hover {
+i.social-links-link:hover {
   color: white;
   background-color: #1779ba;
 }
@@ -94,6 +95,13 @@ li.is-submenu-item:nth-child(n) {
 }
 
 // Events Index
+.index-list-form-field {
+  padding: 0px 15px;
+}
+
+.index-list-event-body {
+  padding: 15px !important;
+}
 
 // Log In Form
 // Overloaded Foundation
@@ -160,6 +168,9 @@ article {
   display: table-cell;
   vertical-align: top; }
 .event-desc .event-desc-header {
+  span {
+    font-weight: bold;
+  }
   margin: 0 0 0.5rem 0;
   padding: 0; }
 .event-desc .event-desc-detail {
@@ -167,6 +178,11 @@ article {
   padding: 0; }
 .event-desc .event-desc-time {
   font-weight: bold; }
+
+// Event show
+.event-show {
+  padding: 0px 20px;
+}
 
 /*
 .event-info-div {
@@ -186,7 +202,6 @@ article {
   }
 }
 
-
 // User Stats
 
 .stats a:visited {
@@ -201,3 +216,4 @@ article {
 p, a, h1, h2, h3, h4, h5, h6, label {
   font-family: 'Open Sans', sans-serif;
 }
+

@@ -2,28 +2,39 @@
     <form>
       <div class="row">
         <h3 class="text-center">Events</h3>
-        <div class="medium-4 columns">
-          <label>Search Events</label>
+        <div class="medium-3 columns">
+          <label class="index-list-form-field">Search Events
           <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
           <%= f.text_field(
                   :search_query,
-                  class: 'filterrific-periodically-observed form-control'
+                  class: 'filterrific-periodically-observed'
               ) %>
+          </label>
         </div>
-        <div class="medium-4 columns">
-          <label>Event Category</label>
+        <div class="medium-3 columns">
+          <label class="index-list-form-field">Event Category
           <%= f.select(
                   :with_event_category_id,
                   @filterrific.select_options[:with_event_category_id],
-                  { include_blank: '- Any -' },
-                  class: 'form-control'
+                  { include_blank: '- Any -' }
               ) %>
+          </label>
         </div>
-        <div class="medium-4 columns">
-          <label>Start Date</label>
-          <%= f.text_field(:with_start_date, class: ' filterrific-periodically-observed form-control', id: 'datepicker') %>
+        <div class="medium-3 columns">
+          <label class="index-list-form-field">Start Date
+          <%= f.text_field(:with_start_date, class: ' filterrific-periodically-observed', id: 'datepicker') %>
+          </label>
         </div>
-        <div>
+        <div class="medium-3 columns">
+          <label class="index-list-form-field">Location
+            <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+            <%= f.text_field(
+                    :location_query,
+                    class: 'filterrific-periodically-observed'
+                ) %>
+          </label>
+        </div>
+        <div class=" columns index-list-form-field">
           <%= link_to(
                   'Reset filters',
                   reset_filterrific_url,

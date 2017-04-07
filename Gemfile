@@ -42,6 +42,7 @@ gem 'foundation-rails'
 gem 'devise-foundation-views'
 gem 'filterrific'
 gem 'foundation-datepicker-rails'
+gem 'commontator', '~> 4.11.1'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

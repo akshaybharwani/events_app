@@ -12,13 +12,14 @@
         <th>Name</th>
         <th>Event Category</th>
         <th>Start Date</th>
+        <th>Location</th>
       </tr>
       </thead>
       <% @events.each do |event| %>
-          <tbody>
+          <tbody class="index-list-event-body">
             <tr>
               <td><%= event.attendees.count %></td>
-              <td><%= link_to(event.title, event_path(event)) %>
+              <td id="list-event-name"><%= link_to(event.title, event_path(event)) %>
                 <% if event.start_date? %>
                     <% if event.start_date < Date.today %>
                         <span class="label">PAST</span>
@@ -27,6 +28,7 @@
               </td>
               <td><%= event.event_category.name if event.event_category %></td>
               <td><%= event.start_date %></td>
+              <td><%= event.location %></td>
             </tr>
 
           </tbody>

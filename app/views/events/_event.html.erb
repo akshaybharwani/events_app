@@ -14,7 +14,11 @@
         <%= render 'events/attend_event_form' %>
       </div>
       <div class="event-desc">
-        <h4 class="event-desc-header"><%= event.title %></h4>
+        <h4 class="event-desc-header"><%= event.title %>
+          <span class="label">
+            <span>Location: <%= event.location %></span>
+          </span>
+        </h4>
         <p class="event-desc-detail"><span class="event-desc-time"></span><%= event.description %></p>
       </div>
     </div>
@@ -52,6 +56,7 @@
 
       </div>
     </div>
+    <hr>
 
 
   </div>

@@ -33,6 +33,10 @@
               <%= f.collection_select :event_category_id, EventCategory.all, :id, :name, include_blank: true %>
             </label>
 
+            <label>Location
+              <%= f.text_field :location %>
+            </label>
+
             <label>Upload an Image for the Event
                 <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
             </label>

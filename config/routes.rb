@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     end
   end
   resources :attendance_relations,       only: [:create, :destroy]
+  mount Commontator::Engine => '/commontator'
 end

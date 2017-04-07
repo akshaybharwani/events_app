@@ -1,3 +1,8 @@
-<div>
-  <%= render @event %>
+<div class="row">
+  <div class="medium-12 columns small-12 event-show">
+    <%= render @event %>
+
+    <%= commontator_thread(@event) %>
+  </div>
+
 </div>

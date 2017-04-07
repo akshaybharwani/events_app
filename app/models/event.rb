@@ -4,6 +4,7 @@ class Event < ApplicationRecord
                 search_query
                 with_event_category_id
                 with_start_date
+                location_query
               ]
 
   # default for will_paginate
@@ -15,12 +16,16 @@ class Event < ApplicationRecord
   validates :creator_id, presence: true
   validates :title, presence: true#, length: { maximum: 30 }
   validates :description, presence: true, length: { maximum: 100 }
-  validates :start_date, presence: true
+  validates :start_date, :location, presence: true
   validate  :picture_size
   has_many :attendance_relations, foreign_key: 'attended_event_id',
            dependent: :destroy
   has_many :attendees,            through: :attendance_relations
   belongs_to :event_category
+  validates :event_category, presence: true
+
+  acts_as_commontable
+
   private
 
   scope :search_query, lambda { |query|
@@ -52,6 +57,30 @@ class Event < ApplicationRecord
   }
   scope :with_start_date, lambda { |ref_date|
     where('events.start_date = ?', ref_date)
+  }
+
+  scope :location_query, lambda { |query|
+    return nil  if query.blank?
+    # condition query, parse into individual keywords
+    terms = query.downcase.split(/\s+/)
+    # replace "*" with "%" for wildcard searches,
+    # append '%', remove duplicate '%'s
+    terms = terms.map { |e|
+      (e.gsub('*', '%') + '%').gsub(/%+/, '%')
+    }
+    # configure number of OR conditions for provision
+    # of interpolation arguments. Adjust this if you
+    # change the number of OR conditions.
+    num_or_conditions = 1
+    where(
+        terms.map {
+          or_clauses = [
+              'LOWER(events.location) LIKE ?'
+          ].join(' OR ')
+          "(#{ or_clauses })"
+        }.join(' AND '),
+        *terms.map { |e| [e] * num_or_conditions }.flatten
+    )
   }
 
   def decorated_start_date_at

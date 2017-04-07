@@ -24,6 +24,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
+    commontator_thread_show(@event)
   end
 
   # GET /events/new
@@ -73,6 +75,6 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:title, :description, :picture, :start_date, :event_category_id)
+    params.require(:event).permit(:title, :description, :picture, :start_date, :event_category_id, :location)
   end
 end

@@ -13,6 +13,8 @@ class User < ApplicationRecord
            dependent: :destroy
   has_many :attended_events,      through: :attendance_relations
 
+  acts_as_commontator
+
   # Attend an event
   def attend_event(event)
     attended_events << event
