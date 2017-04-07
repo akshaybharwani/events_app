@@ -19,7 +19,7 @@ College: [GHRIEM, Jalgaon](ghriemjal.raisoni.net) affiliated to [North Maharasht
 2. Download or clone the project
 
 ###### Terminal:
-3.     cd events_app
+3. change directory: `cd events_app`
 4. run `bundle` to install all the dependencies and Gems.
 5. run `rails server` to run the app.
 6. visit `localhost:3000` from your browser of choice to use the app.
