@@ -1,11 +1,12 @@
 ## DiscoverIt - An Event Discovery Application
 ### http://amb-events-app.herokuapp.com
-####DisoverIt (events_app)
+
+#### DisoverIt (events_app)
 A College Minor Project built in the Semester VI.
 
 College: [GHRIEM, Jalgaon](ghriemjal.raisoni.net) affiliated to [North Maharashtra University](nmu.ac.in)
 
-Built by the CSE Students:
+###### Built by the CSE Students:
 * [Akshay Bharwani](https://github.com/akshaybharwani)
 * [Vaishnav Viswanath]()
 * [Vivek Valavi]()
@@ -17,7 +18,7 @@ Built by the CSE Students:
   * Mac: http://blog.teamtreehouse.com/install-rails-5-mac
 2. Download or clone the project
 
-#####Terminal:
+###### Terminal:
 3.     cd events_app
 4. run `bundle` to install all the dependencies and Gems.
 5. run `rails server` to run the app.
